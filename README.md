@@ -4,7 +4,7 @@
 Fire Css en un Proyecto Personal, el cuál, surge a raiz de poder estilizar una website, usando como alternativa a otros Frameworks Css
 
 
-Actaulamente este framework, esta en su versión 0.1.2, en la cual cuenta con:
+Actualamente este framework, esta en su versión 0.1.2, en la cual cuenta con:
 
 - Barra de Navegación en modos Oscuro y Claro.
 - Grid
