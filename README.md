@@ -18,7 +18,11 @@ El CDN de dicho framework en su versión 0.1.2 para empezar a usarlo es <pre><co
 
 Mientras que el CDN pero de la version completa es <pre><code>https://cdn.jsdelivr.net/gh/NicproSer/Fire_css@b6589953ba2d7863a463e5b1261f32a172cd93bd/css/fire_full.css</code></pre>
 
+# Compatibilidad con los siguientes buscadores
 
+- Chrome
+- Edge
+- Firefox
 
 
 Además la website donde podrás encontrar los comonentes, es decir la styesheet es https://firecss.netlify.app
