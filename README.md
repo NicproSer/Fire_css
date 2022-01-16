@@ -1,16 +1,17 @@
 # Fire_css
-## Fire Css V0.1.2
+## Fire Css V0.1.3
 
 Fire Css en un Proyecto Personal, el cuál, surge a raiz de poder estilizar una website, usando como alternativa a otros Frameworks Css
 
 
-Actualamente este framework, esta en su versión 0.1.2, en la cual cuenta con:
+Actualamente este framework, esta en su versión 0.1.3, en la cual cuenta con:
 
 - Barra de Navegación en modos Oscuro y Claro.
 - Grid
 - Cards
 - Formularios
 - Botones
+- Botón de regreso arriba
 
 ## CDN
 
