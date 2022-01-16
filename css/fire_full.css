@@ -57,6 +57,7 @@ body{
   font-size: 18px;
   font-family: var(--fuente);
   color: var(--text-color);
+  overflow-x: hidden;
 }
 
 body::-webkit-scrollbar{
