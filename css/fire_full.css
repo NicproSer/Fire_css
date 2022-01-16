@@ -1,6 +1,6 @@
 /********************
 Fire CSS
-Version 1.0
+Version 0.1.2
 Copyright 2021-2022, Fire
 @author: Fire de NICPRO SERVICE
 nicproservice (https://nicprodev.mgpanel.org)
@@ -32,7 +32,7 @@ Variables
   --two-container-ancho:1540px;
   --primary:#f75600;
   --secondary:#633100;
-  --blue: #008DDC;
+  --blue: #006acc;
   --red: #FF0000;
   --orange: #FF7F00;
   --green: #069b1f;
@@ -361,6 +361,9 @@ Components
 
 .navbar{
   padding: 4px;
+  top: 0;
+    left: 0;
+    width: 100%;
 }
 
 .navbar::after{
@@ -661,6 +664,18 @@ BANNER
   aspect-ratio: 16/9;
 }
 
+
+/******************
+Slider o Carrusel
+******************/
+
+
+
+/******************
+Tabla de Precios
+******************/
+
+
 /******************
 Botones
 ******************/
@@ -675,6 +690,7 @@ button{
   width: 140px;
   padding: 10px;
   cursor: pointer;
+  margin: 5px; 
 }
 
 .button-primary{
@@ -705,6 +721,29 @@ button{
   color: var(--text-color-light);
 }
 
+.button-blue{
+  background: var(--blue);
+  color: var(--text-color-light);
+}
+
+.button-red{
+  background: var(--red);
+  color: var(--text-color-light);
+}
+
+.button-dark{
+  background: var(--dark);
+  color: var(--text-color-light);
+}
+
+.button-yellow{
+  background: var(--yellow);
+  color: var(--text-color);
+}
+
+
+
+
 /******************
 Formularios
 ******************/
@@ -731,12 +770,12 @@ Footer
 ******************/
 footer{
  padding: 40px;
+ text-align: center;
 }
 
 .footer-dark{
   background:var(--dark);
   color: var(--text-color-light);
- 
 }
 
 
