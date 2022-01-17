@@ -26,6 +26,7 @@ Y el archivo JS es el siguiente
 - Chrome
 - Edge
 - Firefox
+- Opera
 
 
 Además la website donde podrás encontrar los comonentes, es decir la styesheet es https://firecss.netlify.app
