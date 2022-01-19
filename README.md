@@ -27,7 +27,7 @@ Y el archivo JS es el siguiente
 - Edge
 - Firefox
 - Opera
-
+- Brave
 
 Además la website donde podrás encontrar los comonentes, es decir la styesheet es https://firecss.netlify.app
 
