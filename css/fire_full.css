@@ -708,7 +708,7 @@ button{
 .button-secondary:hover{
   background: var(--light);
   color: var(--secondary);
-  border: 2px solid var(--secondary);
+  outline: 1.5px solid var(--secondary);
 }
 
 .button-outline-primary{
@@ -716,6 +716,107 @@ button{
   border: 2px solid var(--primary);
   color: var(--primary);
 }
+
+.button-outline-primary:hover{
+  background: var(--primary);
+  color: var(--text-color-light);
+}
+
+.button-outline-primary{
+  background: none;
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  transition: .3s ease all;
+}
+
+.button-outline-primary:hover{
+  background: var(--primary);
+  color: var(--text-color-light);
+}
+
+.button-outline-secondary{
+  background: none;
+  border: 2px solid var(--secondary);
+  color: var(--secondary);
+  transition: .3s ease all;
+}
+
+.button-outline-secondary:hover{
+  background: var(--secondary);
+  color: var(--text-color-light);
+}
+
+.button-outline-blue{
+  background: none;
+  border: 2px solid var(--blue);
+  color: var(--blue);
+  transition: .3s ease all;
+}
+
+.button-outline-blue:hover{
+  background: var(--blue);
+  color: var(--text-color-light);
+}
+
+.button-outline-red{
+  background: none;
+  border: 2px solid var(--red);
+  color: var(--red);
+  transition: .3s ease all;
+}
+
+.button-outline-red:hover{
+  background: var(--red);
+  color: var(--text-color-light);
+}
+
+.button-outline-green{
+  background: none;
+  border: 2px solid var(--green);
+  color: var(--green);
+  transition: .3s ease all;
+}
+
+.button-outline-green:hover{
+  background: var(--green);
+  color: var(--text-color-light);
+}
+
+.button-outline-yellow{
+  background: none;
+  border: 2px solid var(--yellow);
+  color: var(--yellow);
+  transition: .3s ease all;
+}
+
+.button-outline-yellow:hover{
+  background: var(--yellow);
+  color: var(--text-color);
+}
+
+.button-outline-dark{
+  background: none;
+  border: 2px solid var(--dark);
+  color: var(--dark);
+  transition: .3s ease all;
+}
+
+.button-outline-dark:hover{
+  background: var(--dark);
+  color: var(--text-color-light);
+}
+
+.button-small{
+  width: 80px !important;
+  font-size: 14px;
+}
+
+.button-large{
+  width: 180px;
+  padding: 20px 20px;
+  font-size: 20px !important;
+}
+
 
 .button-green{
   background: var(--green);
