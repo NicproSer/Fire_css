@@ -1,5 +1,5 @@
 # Fire_css
-## Fire Css V0.1.3
+## Fire Css V1.0.0
 
 Fire Css en un Proyecto Personal, el cuál, surge a raiz de poder estilizar una website, usando como alternativa a otros Frameworks Css
 
@@ -12,13 +12,18 @@ Actualamente este framework, esta en su versión 0.1.3, en la cual cuenta con:
 - Formularios
 - Botones
 - Botón de regreso arriba
+- Menu Desplegable
+- Banner tipo slider
+- Tabla de Precio
+- Modal
 
 ## CDN
 
-El CDN de dicho framework en su versión 0.1.3 para empezar a usarlo es <pre><code> https://cdn.jsdelivr.net/gh/NicproSer/Fire_css@83957f76b3752a05a669177884b729ee45f86983/css/fire.css </code></pre>
+El CDN de dicho framework en su versión 1.0.0 para empezar a usarlo es 
+<pre><code> link rel="stylesheet"href="https://cdn.jsdelivr.net/gh/NicproSer/Fire_css@32ab464d9b028727ad6205648069c48d978c7a0c/css/fire_full.css"></code></pre>
 
 Y el archivo JS es el siguiente
-<pre><code> https://cdn.jsdelivr.net/gh/NicproSer/Fire_css@73b19ac396ee650226206120035e3878f4e63f6f/js/fire.js </code></pre>
+<pre><code> <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/NicproSer/Fire_css@32ab464d9b028727ad6205648069c48d978c7a0c/js/fire.js"></script></code></pre>
 
 
 # Compatibilidad con los siguientes buscadores
