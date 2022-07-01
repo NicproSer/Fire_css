@@ -678,6 +678,7 @@ Components
   max-width: calc(100% - 200px);
   height: 70px;
   margin: 0 auto;
+	z-index:100;
 }
 
 .navbar .content{
