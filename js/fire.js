@@ -1,209 +1,219 @@
-//Fire CSS V 0.1.6
-//@author: Fire de NICPRO SERVICE
-//nicproservice (https://nicprodev.mgpanel.org)
-//Realizado por Nicolás Gómez
-//Copyright © 2022
+//Fire Css: Framework Css Version 2.0.0
+//@author: Nicolás Gómez
+//Copyright © 2023
 //Licencia: MIT
 
-//Slider
+//Configuración
 
-function Carousel(element) {
-  this._autoDuration = 0;
-  this._container = element.querySelector('.container-fluid');
-  this._interval = null;
-  this._nav = element.querySelector('nav');
-  this._slide = 0;
-  this._touchAnchorX = 0;
-  this._touchTime = 0;
-  this._touchX1 = 0;
-  this._touchX2 = 0;
-  element.addEventListener('click', this);
-  element.addEventListener('touchstart', this);
-  element.addEventListener('touchmove', this);
-  element.addEventListener('touchend', this);
-  element.addEventListener('transitionend', this);
-  window.addEventListener('blur', this);
-  window.addEventListener('focus', this);
-  this.set(0);
+const body = document.querySelector("body"),
+  //Nav
+  nav = document.querySelector("nav"),
+  modeToggle = document.querySelector(".dark-light"),
+  searchToggle = document.querySelector(".searchToggle"),
+  sidebarOpen = document.querySelector(".sidebarOpen"),
+  sidebarClose = document.querySelector(".sidebarClose"),
+  //Dropdown
+  dropdownList = document.querySelector(".dropdown"),
+  //Carrusel
+  carouselSlide = document.querySelector(".carousel-slides"),
+  carouselImages = document.querySelectorAll(".carousel-slides img"),
+  nextSlide = document.querySelector("#nextSlide"),
+  prevSlide = document.querySelector("#prevSlide"),
+  currentSlide = document.querySelector(".current-slide"),
+  allSlides = document.querySelector(".all-slides"),
+  //Pagination
+  ulTag = document.querySelector(".ul-tag"),
+  //Alertas
+  buttonAlert = document.querySelector(".button-alert"),
+  toast = document.querySelector(".toast"),
+  closeIcon = document.querySelector(".toast-close"),
+  progressAlert = document.querySelector(".alert-progress");
+
+//Toggle dark-light mode and Search Box
+
+let getMode = localStorage.getItem("mode");
+if (getMode && getMode === "light-mode") {
+  body.classList.add("light");
 }
 
-Carousel.prototype.auto = function (ms) {
-  if (this._interval) {
-    clearInterval(this._interval);
-    this._interval = null;
+//Dark and Light
+modeToggle.addEventListener("click", () => {
+  modeToggle.classList.toggle("active");
+  body.classList.toggle("dark");
+  nav.classList.toggle("nav-dark");
+
+  if (!body.classList.contains("dark")) {
+    localStorage.setItem("mode", "dark-mode");
+  } else {
+    localStorage.setItem("mode", "light-mode");
   }
-  if (ms) {
-    this._autoDuration = ms;
-    var self = this;
-    this._interval = setInterval(function () { self.next(); }, ms);
-  }
-}
-
-Carousel.prototype.handleEvent = function (event) {
-  if (event.touches && event.touches.length > 0) {
-    this._touchTime = +new Date;
-    this._touchX1 = this._touchX2;
-    this._touchX2 = event.touches[0].screenX;
-  }
-
-  var screen = document.documentElement.clientWidth;
-  var position = this._slide + (this._touchAnchorX - this._touchX2) / screen;
-  var velocity = (new Date - this._touchTime) <= 200 ? (this._touchX1 - this._touchX2) / screen : 0;
-
-  switch (event.type) {
-    case 'blur':
-      this.auto(0);
-      break;
-    case 'click':
-      if (event.target.parentNode != this._nav) break;
-      var i = parseInt(event.target.dataset.slide);
-      if (!isNaN(i)) {
-        event.preventDefault();
-        this.auto(0);
-        this.set(i);
-      }
-      break;
-    case 'focus':
-      this.auto(this._autoDuration);
-      break;
-    case 'touchstart':
-      event.preventDefault();
-      this.auto(0);
-      this._container.style.transition = 'none';
-      this._touchAnchorX = this._touchX1 = this._touchX2;
-      break;
-    case 'touchmove':
-      this._container.style.transform = 'translate3d(' + (-position * 100) + 'vw, 0, 0)';
-      break;
-    case 'touchend':
-      this._container.style.transition = '';
-      var offset = Math.min(Math.max(velocity * 4, -0.5), 0.5);
-      this.set(Math.round(position + offset));
-      break;
-    case 'transitionend':
-      var i = this._slide, count = this._countSlides();
-      if (i >= 0 && i < count) break;
-      // The slides should wrap around. Instantly move to just outside screen on the other end.
-      this._container.style.transition = 'none';
-      this._container.style.transform = 'translate3d(' + (i < 0 ? -count * 100 : 100) + 'vw, 0, 0)';
-      // Force changes to be applied sequentially by reflowing the element.
-      this._container.offsetHeight;
-      this._container.style.transition = '';
-      this._container.offsetHeight;
-      // Animate the first/last slide in.
-      this.set(i < 0 ? count - 1 : 0);
-      break;
-  }
-};
-
-Carousel.prototype.next = function () {
-  this.set(this._slide + 1);
-};
-
-Carousel.prototype.previous = function () {
-  this.set(this._slide - 1);
-};
-
-Carousel.prototype.set = function (i) {
-  var count = this._countSlides();
-  if (i < 0) { i = -1; } else if (i >= count) { i = count; }
-  this._slide = i;
-  this._container.style.transform = 'translate3d(' + (-i * 100) + 'vw, 0, 0)';
-  this._updateNav();
-};
-
-Carousel.prototype._countSlides = function () {
-  return this._container.querySelectorAll('.slide').length;
-};
-
-Carousel.prototype._updateNav = function () {
-  var html = '', count = this._countSlides();
-  for (var i = 0; i < count; i++) {
-    if (i > 0) html += '&nbsp;';
-    html += '<a' +  (i == this._slide ? ' class="current"' : '') + ' data-slide="' + i + '" href="#">●</a>';
-  }
-  this._nav.innerHTML = html;
-}
-
-var carousels = Array.prototype.map.call(document.querySelectorAll('.carousel'), function (element) {
-  var carousel = new Carousel(element);
-  carousel.auto(5000);
-  return carousel;
+});
+//Search Box
+searchToggle.addEventListener("click", () => {
+  searchToggle.classList.toggle("active");
 });
 
-//Navbar
+//Toggle Sidebar
+sidebarOpen.addEventListener("click", () => {
+  nav.classList.add("active");
+});
 
-
-//Navbar-Sidebar Open Close JS Code
-
+sidebarClose.addEventListener("click", () => {
+  nav.classList.remove("active");
+});
 
 //Dropdown
-function show(anything){
-   document.querySelector('.textBox').value = anything;
+function show(anything) {
+  document.querySelector(".textBox").value = anything;
 }
 
-let dropdown = document.querySelector('.dropdown');
-dropdown.onclick = function(){
-   dropdown.classList.toggle('active');
-}
-
-//MODAL
-
-const openEls = document.querySelectorAll('[data-open]');
-const closeEls = document.querySelectorAll('[data-close]');
-const isVisible = "is-visible";
-
-for (const el of openEls) {
-   el.addEventListener("click", function(){
-      const modalId = this.dataset.open;
-      document.getElementById(modalId).classList.add(isVisible);
-   });
-}
-
-for (const el of closeEls) {
-   el.addEventListener("click", function(){
-      this.parentElement.parentElement.parentElement.classList.remove(isVisible);
-   });
-}
-
-document.addEventListener("click", e => {
-  if (e.target == document.querySelector(".fir-modal.is-visible")) {
-    document.querySelector(".fir-modal.is-visible").classList.remove(isVisible);
-  }
+dropdownList.addEventListener("click", () => {
+  dropdownList.classList.toggle("active");
 });
-
-document.addEventListener("keyup", e => {
-  // if we press the ESC
-  if (e.key == "Escape" && document.querySelector(".fir-modal.is-visible")) {
-    document.querySelector(".fir-modal.is-visible").classList.remove(isVisible);
-  }
-});
-
-//Temas
-
 
 //Scroll Up
 
 document.getElementById("button-up").addEventListener("click", scrollUp);
 
-function scrollUp(){
-   var currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
+function scrollUp() {
+  var currentScroll =
+    document.documentElement.scrollTop || document.body.scrollTop;
 
-   if (currentScroll > 0) {
-      window.requestAnimationFrame(scrollUp);
-       window.scrollTo (0, currentScroll - (currentScroll / 10));
-       buttonUp.style.transform = "scale(0)";
-   }
+  if (currentScroll > 0) {
+    window.requestAnimationFrame(scrollUp);
+    window.scrollTo(0, currentScroll - currentScroll / 10);
+    buttonUp.style.transform = "scale(0)";
+  }
 }
 ///
 buttonUp = document.getElementById("button-up");
 
-window.onscroll = function(){
+window.onscroll = function () {
+  var scroll = document.documentElement.scrollTop;
+  if (scroll > 500) {
+    buttonUp.style.transform = "scale(1)";
+  } else if (scroll < 500) {
+    buttonUp.style.transform = "scale(0)";
+  }
+};
 
-   var scroll = document.documentElement.scrollTop;
-   if (scroll > 500){
-      buttonUp.style.transform = "scale(1)";
-   }else if(scroll < 500){
-      buttonUp.style.transform = "scale(0)";
-   }
+//MODAL
+const toggleModal = () => {
+  const { classList } = document.body;
+  if (classList.contains("open")) {
+    classList.remove("open");
+    classList.add("closed");
+  } else {
+    classList.remove("closed");
+    classList.add("open");
+  }
+};
+
+//CARRUSEL
+let counter = 0;
+
+const size = carouselImages[0].clientWidth;
+
+nextSlide.addEventListener("click", () => {
+  if (counter >= carouselImages.length - 1) return;
+  //Add 1 to the counter
+  counter++;
+  //Move carousel
+  carouselSlide.style.transform = `translateX(${-size * counter}px)`;
+  //Current Slide
+  currentSlide.textContent = counter + 1;
+});
+
+prevSlide.addEventListener("click", () => {
+  if (counter <= 0) return;
+  counter--;
+  carouselSlide.style.transform = `translateX(${-size * counter}px)`;
+  currentSlide.textContent = counter + 1;
+});
+
+allSlides.textContent = carouselImages.length;
+
+//Pagination
+let totalPages = 10;
+function element(totalPages, page) {
+  let liTag = "";
+  let activeLi;
+  let beforePages = page - 1;
+  let afterPages = page + 1;
+  if (page > 1) {
+    liTag += ` <li class="btn prev" onclick="element(totalPages, ${
+      page - 1
+    })"><span><i class='bx bx-chevron-left'></i> Prev</span></li>`;
+  }
+  if (page > 2) {
+    liTag += `<li class="numb" onclick="element(totalPages, 1)"><span>1</span></li>`;
+    if (page > 3) {
+      liTag += `<li class="dots"><span>...</span></li>`;
+    }
+  }
+
+  if (page == totalPages) {
+    beforePages = beforePages - 2;
+  } else if (page == totalPages - 1) {
+    beforePages = beforePages - 1;
+  }
+
+  if (page == 1) {
+    afterPages = afterPages + 2;
+  } else if (page == 2) {
+    afterPages = afterPages + 1;
+  }
+
+  for (let pageLength = beforePages; pageLength <= afterPages; pageLength++) {
+    if (pageLength > totalPages) {
+      continue;
+    }
+    if (pageLength == 0) {
+      pageLength = pageLength + 1;
+    }
+    if (page === pageLength) {
+      activeLi = "active";
+    } else {
+      activeLi = "";
+    }
+    liTag += `<li class="numb ${activeLi}" onclick="element(totalPages, ${pageLength})"><span>${pageLength}</span></li>`;
+  }
+
+  if (page < totalPages - 1) {
+    if (page < totalPages - 2) {
+      liTag += `<li class="dots"><span>...</span></li>`;
+    }
+    liTag += `<li class="numb" onclick="element(totalPages, ${totalPages})"><span>${totalPages}</span></li>`;
+  }
+
+  if (page < totalPages) {
+    liTag += `<li class="btn next" onclick="element(totalPages, ${
+      page + 1
+    })"><span>Next <i class='bx bx-chevron-right'></i></span></li>`;
+  }
+  ulTag.innerHTML = liTag;
 }
+
+element(totalPages, 1);
+
+//Alertas
+
+buttonAlert.addEventListener("click", () => {
+  toast.classList.add("active");
+  progressAlert.classList.add("active");
+
+  setTimeout(() => {
+    toast.classList.remove("active");
+  }, 5000);
+  setTimeout(() => {
+    progressAlert.classList.remove("active");
+  }, 5300);
+});
+
+closeIcon.addEventListener("click", () => {
+  toast.classList.remove("active");
+
+  setTimeout(() => {
+    progressAlert.classList.remove("active");
+  }, 300);
+});

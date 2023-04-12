@@ -1,370 +1,395 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="es">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="description"
-    content="Fire Css es un Framework sencillo, de codigo abierto, gratis, con el cual puedes crear y modernizar tus websites">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="og:type" content="website">
-  <meta name="author" content="Nicolás Gómez">
-  <meta name="og:description"
-    content="Fire Css es un Framework sencillo, de codigo abierto, gratis, con el cual puedes crear y modernizar tus websites">
-  <meta name="og:title" content="Fire Css">
-  <script src="https://kit.fontawesome.com/991dcc1ff0.js" crossorigin="anonymous"></script>
-  <link rel="shortcut icon" href="/fuego.png" type="image/x-icon">
-  <!--Fire Css-->
-  <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/NicproSer/Fire_css@32ab464d9b028727ad6205648069c48d978c7a0c/css/fire_full.css">-->
-
-  <link rel="stylesheet" href="/css/fire_full.css" />
-  <title>Fire Css: Framework V 0.1</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google" content="notranslate">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/fire.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Fire StyleSheet</title>
 </head>
 
 <body>
+    <nav class="nav-light">
+        <div class=" navbar">
+            <i class='bx bx-menu sidebarOpen'></i>
+            <span class="logo"><a href="#">LOGO</a></span>
+            <div class="navbar-menu">
+                <div class="logo-toggle">
+                    <span class="logo"><a href="#">Logo</a></span>
+                    <i class='bx bx-x sidebarClose'></i>
+                </div>
+                <ul class="nav-links">
+                    <li class="nav-link"><a href="#">Inicio</a></li>
+                    <li class="nav-link"><a href="#">Nosotros</a></li>
+                    <li class="nav-link"><a href="#">Servicios</a></li>
+                    <li class="nav-link"><a href="#">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="darkLight-searchBox">
+                <div class="dark-light">
+                    <i class='bx bx-moon moon'></i>
+                    <i class='bx bx-sun sun'></i>
+                </div>
+                <div class="searchBox">
+                    <div class="searchToggle">
+                        <i class='bx bx-x cancel'></i>
+                        <i class='bx bx-search-alt-2 search'></i>
+                    </div>
 
- <header class="nav-light">
-  <nav class="navbar">
-    <input type="checkbox" id="show-search">
-    <input type="checkbox" id="show-menu">
-      <label for="show-menu" class="menu-icon">
-        <i class="fas fa-bars"></i>
-      </label>
-    <div class="content">
-      <div class="nav_brand">
-        <a href="/">
-          <img src="/338-logo..png" alt="">
-          Fire Css
-        </a>
-      </div>
-      <ul class="nav_links">
-        <li><a href="/">Inicio</a></li>
-        <li><a href="#">Nosotros</a></li>
-        <li>
-          <a href="#" class="desktop-link">Categorías</a>
-          <input type="checkbox" id="show-subMenu">
-          <label for="show-subMenu">Categorías</label>
-          <ul class="sub-menu">
-            <li><a href="#">Categoría 1</a></li>
-            <li><a href="#">Categoría 2</a></li>
-            <li><a href="#">Categoría 3</a></li>
-          </ul>
-        </li>
-        <li>
-          <a href="#" class="desktop-link">Servicios</a>
-          <input type="checkbox" id="show-subMenu2">
-          <label for="show-subMenu2">Servicios</label>
-          <ul class="sub-menu">
-            <li><a href="#">Servicio 1</a></li>
-            <li><a href="#">Servicio 2</a></li>
-            <li>
-              <a href="#" class="desktop-link">Más</a>
-              <input type="checkbox" id="show-subMenu3">
-              <label for="show-subMenu3">Más</label>
-              <ul class="sub-menu">
-                <li><a href="#">Servicio 3</a></li>
-                <li><a href="#">Servicio 4</a></li>
-                <li><a href="#">Servicio 5</a></li>
-                 </ul>
-            </li>
-            </ul>
-        </li>
-        <li><a href="#">Contacto</a></li>
-        <li><a href="#">Blog</a></li>
-      </ul>
+                    <div class="search-field">
+                        <input type="text" placeholder="Search...">
+                        <i class='bx bx-search-alt-2 search'></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <h2>Carrusel</h2>
+    <div class="carousel">
+        <button id="nextSlide"><i class='bx bx-chevron-right'></i></button>
+        <button id="prevSlide"><i class='bx bx-chevron-left'></i></button>
+        <div class="carousel-slides">
+            <img src="./img_nature_wide.jpg" alt="">
+            <img src="./img_snow_wide.jpg" alt="">
+        </div>
+        <div class="slide-number">
+            <span class="current-slide">1</span>
+            /
+            <span class="all-slides">2</span>
+        </div>
     </div>
-    <label for="show-search" class="search-icon">
-      <i class="fas fa-search"></i>
-    </label>
-    <form action="#" class="search-box">
-      <input type="text" placeholder="Buscar..." required>
-      <button type="submit" class=" go-icon">
-        <i class="fas fa-arrow-right"></i>
-      </button>
-    </form>
-  </nav>
- </header>
 
+    <div class="container">
+        <h1>Textos</h1>
+        <h1>Fire-Css: El framework que enciende tu creatividad</h1>
+        <h1>Encabezado H1</h1>
+        <h2>Encabezado H2</h2>
+        <h3>Encabezado H3</h3>
+        <h4>Encabezado H4</h4>
+        <h5>Encabezado H5</h5>
+        <h6>Encabezado H6</h6>
 
+        <h1 class="display-1">Display 1</h1>
+        <h2 class="display-2">Display 2</h2>
+        <h3 class="display-3">Display 3</h3>
 
-  <section class="carousel">
-    <nav></nav>
-    <div class="container-fluid">
-      <div class="slide">
-        <img src="/img_nature_wide.jpg" alt="">
-      </div>
-      <div class="slide">
-        <img src="/img_snow_wide.jpg" alt="">
-      </div>
-    </div>
-  </section>
-  
+        <div class="row">
+            <div class="row-col-12 col-med-6 ">
+                <h2>Botones</h2>
+                <button class="button-primary">Boton</button>
+                <button class="button-secondary">Boton</button>
+                <button class="button-blue">Boton</button>
+                <button class="button-green">Boton</button>
+                <button class="button-dark">Boton</button>
+                <button class="button-red">Boton</button>
+                <button class="button-yellow">Boton</button>
+                <button class="button-outline-primary">Boton</button>
+                <button class="button-outline-secondary">Boton</button>
+                <button class="button-outline-blue">Boton</button>
+                <button class="button-outline-green">Boton</button>
+                <button class="button-outline-dark">Boton</button>
+                <button class="button-outline-red">Boton</button>
+                <button class="button-outline-yellow">Boton</button>
+            </div>
 
-  <div class="container">
-    <h1>Encabezado H1</h1>
-    <h2>Encabezado H2</h2>
-    <h3>Encabezado H3</h3>
-    <h4>Encabezado H4</h4>
-    <h5>Encabezado H5</h5>
-    <h6>Encabezado H6</h6>
+            <div class="row-col-12 col-med-12">
+                <div class="card">
+                    <h2>Card</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde id ad quisquam nesciunt aperiam
+                        minima omnis, voluptatem voluptatibus quidem sapiente cupiditate neque a necessitatibus
+                        laboriosam sit consectetur esse repellat, magni ducimus voluptates. Non vero, praesentium
+                        laboriosam rerum velit autem consectetur natus placeat illo tempora voluptatum maxime sed magni
+                        vitae in perspiciatis earum explicabo iure veniam hic, ad ducimus. Veniam at nam culpa esse, ea
+                        ipsam? Totam tempore odit odio! Laborum porro architecto praesentium fugiat illum fugit
+                        reiciendis impedit rerum enim sequi? Natus libero laudantium quaerat adipisci, provident itaque!
+                        Minima quod ex consequuntur qui ea sit ipsum fugiat officiis libero distinctio.</p>
+                </div>
+            </div>
+            <div class="col-med-6">
+                <div class="card">
+                    <form action="">
+                        <h2>Formulario</h2>
+                        <div class="input_field">
+                            <input type="email" class="form_input" placeholder="Email">
+                        </div>
+                        <div class="input_field">
+                            <input type="password" class="form_input" placeholder="Password">
+                        </div>
+                        <div>
+                            <select name="" id="">
+                                <option value="">Seleccione</option>
+                                <option value="">1</option>
+                                <option value="">2</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-med-6">
+                <div class="card">
+                    <h2>Dropdown</h2>
+                    <div class="dropdown">
+                        <input type="text" class="textBox" placeholder="Dropdown Menu" readonly>
+                        <div class="option">
+                            <div onclick="show('Opcion 1')">Opción 1</div>
+                            <div onclick="show('Opcion 2')">Opción 2</div>
+                            <div onclick="show('Opcion 3')">Opción 3</div>
+                            <div onclick="show('Opcion 4')">Opción 4</div>
+                        </div>
+                    </div>
+                    <br>
+                    <h2>Inputs</h2>
+                    <div class="input_container">
+                        <input type="radio" name="selector" id="option" class="input-radio">
+                        <label for="option" class="label-input-radio">Opcion 1</label>
+                        <div class="check"></div>
+                    </div>
+                    <div class="input_container">
+                        <input type="radio" name="selector" id="option2" class="input-radio">
+                        <label for="option2" class="label-input-radio">Opcion 2</label>
+                        <div class=" check">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h2>Columnas</h2>
+            <div class="col-med-12">
+                <div class="card">.col-med-12</div>
+            </div>
+            <div class="col-med-11">
+                <div class="card">.col-med-11</div>
+            </div>
+            <div class="col-med-10">
+                <div class="card">.col-med-10</div>
+            </div>
+            <div class="col-med-9">
+                <div class="card">.col-med-9</div>
+            </div>
+            <div class="col-med-8">
+                <div class="card">.col-med-8</div>
+            </div>
+            <div class="col-med-7">
+                <div class="card">.col-med-7</div>
+            </div>
+            <div class="col-med-6">
+                <div class="card">.col-med-6</div>
+            </div>
+            <div class="col-med-5">
+                <div class="card">.col-med-5</div>
+            </div>
+            <div class="col-med-4">
+                <div class="card">.col-med-4</div>
+            </div>
+            <div class="col-med-3">
+                <div class="card">.col-med-3</div>
+            </div>
+            <div class="col-med-2">
+                <div class="card">.col-med-2</div>
+            </div>
+            <div class="col-med-1">
+                <div class="card">.col-med-1</div>
+            </div>
+            <div class="row">
+                <div class="col-med-6">
+                    <h2>Modal</h2>
+                    <button class="button-primary button-large" type="button" onclick="toggleModal()">Modal</button>
+                </div>
+                <div class="modal-background" onclick="toggleModal()"></div>
+                <div class="modal">
+                    <h2>Modal Open</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit facilis quisquam illo voluptatem, ab
+                        exercitationem eum porro nisi quas unde doloribus fuga architecto dignissimos atque dicta sequi?
+                        Accusamus temporibus nesciunt magnam libero amet minima debitis laudantium fugit nam soluta
+                        itaque porro perspiciatis numquam consequuntur possimus provident delectus recusandae, doloribus
+                        vel harum quod nobis. Perferendis dolorum, non quo enim vel possimus nesciunt placeat repellat,
+                        eveniet, id veniam ab? Corrupti magnam nam commodi, repellendus possimus numquam fuga sit neque
+                        harum reprehenderit iure ullam minima aperiam, maxime iusto? Cupiditate sapiente odio
+                        perferendis adipisci quae provident illum! Explicabo provident corporis quibusdam magni
+                        consequuntur labore rerum mollitia tempore fugiat itaque quasi voluptatum, laudantium natus
+                        aperiam adipisci culpa sit eos saepe. Quos ut incidunt amet adipisci ratione consectetur, quidem
+                        iusto! Fugiat voluptate tempora atque? Eos voluptatum cum rerum modi inventore nam id, earum
+                        exercitationem deleniti eaque, nemo quasi magnam deserunt ut facere porro fugiat! Sunt,
+                        delectus.</p>
+                </div>
+            </div>
+        </div>
 
-
-    <h1 class="display-1">Display 1</h1>
-    <h2 class="display-2">Display 2</h2>
-    <h3 class="display-3">Display 3</h3>
-  </div>
-
-  <div class="container">
-    <main class="grid col-4 md-col-2 ">
-      <div class="card">Card 1</div>
-      <div class="card">Card 2</div>
-      <div class="card">Card 3</div>
-      <div class="card">Card 4</div>
-      <div class="card">Card 5</div>
-      <div class="card">Card 6</div>
-    </main>
-  </div>
-
-  <div class="container">
-    <h3>Lista Desplegables
-    </h3>
-    <div class="dropdown">
-      <input type="text" class="textBox" placeholder="Dropdown Menu" readonly>
-      <div class="option">
-        <div onclick="show('Opcion 1')">Opción 1</div>
-        <div onclick="show('Opcion 2')">Opción 2</div>
-        <div onclick="show('Opcion 3')">Opción 3</div>
-        <div onclick="show('Opcion 4')">Opción 4</div>
-      </div>
-    </div>
-  </div>
-
-  <div class="container">
-    <div class="grid col-3">
-      <div class="span-2 med-span-3">
-        <div class="card">
-          <h1>Lorem ipsum</h1>
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis tenetur at autem commodi? Maiores
-            reiciendis
-            dolore officia fugit commodi nisi repudiandae iusto ipsam minus explicabo, eligendi hic soluta labore
-            aspernatur!
-          </p>
+        <div class="row">
+            <div class="col-med-5">
+                <h2>
+                    Pagination
+                </h2>
+                <div class="pagination">
+                    <ul class="ul-tag">
+                        <li class="btn prev">
+                            <span><i class='bx bx-chevron-left'></i> Prev</span>
+                        </li>
+                        <li class="numb active"><span>1</span></li>
+                        <li class="numb"><span>2</span></li>
+                        <li class="dots"><span>...</span></li>
+                        <li class="numb"><span>4</span></li>
+                        <li class="numb"><span>5</span></li>
+                        <li class="dots"><span>...</span></li>
+                        <li class="numb"><span>7</span></li>
+                        <li class="btn next">
+                            <span>Next <i class='bx bx-chevron-right'></i></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
         <br>
-        <div class="card">
-          <h1>Lorem ipsum</h1>
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis tenetur at autem commodi? Maiores
-            reiciendis
-            dolore officia fugit commodi nisi repudiandae iusto ipsam minus explicabo, eligendi hic soluta labore
-            aspernatur!
-          </p>
+        <div class="row">
+            <h2>Tabla de Precio</h2>
+            <div class="price-section">
+                <article class="price-table">
+                    <div class="price">
+                        <small>$</small>
+                        99
+                    </div>
+                    <h2 class="title-price">Producto 1</h2>
+                    <p class="description">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, nihil!
+                    </p>
+                    <div class="features">
+                        <details class="feature">
+                            <summary>
+                                <i class='bx bx-check checkmark'></i>
+                                <span class="price-name">Detalle 1</span>
+                            </summary>
+                        </details>
+                        <details class="feature">
+                            <summary>
+                                <i class='bx bx-check checkmark'></i>
+                                <span class="price-name">Detalle 2</span>
+                            </summary>
+                        </details>
+                        <details class="feature">
+                            <summary>
+                                <i class='bx bx-check checkmark'></i>
+                                <span class="price-name">Detalle 3</span>
+                            </summary>
+                        </details>
+                        <details class="feature">
+                            <summary>
+                                <i class='bx bx-check checkmark'></i>
+                                <span class="price-name">Detalle 4</span>
+                            </summary>
+                        </details>
+                        <button class="button-primary button-width">
+                            Comprar
+                        </button>
+                    </div>
+                </article>
+                <article class="price-table">
+                    <div class="price">
+                        <small>$</small>
+                        99
+                    </div>
+                    <h2 class="title-price">Producto 1</h2>
+                    <p class="description">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, nihil!
+                    </p>
+                    <div class="features">
+                        <details class="feature">
+                            <summary>
+                                <i class='bx bx-check checkmark'></i>
+                                <span class="price-name">Detalle 1</span>
+                            </summary>
+                        </details>
+                        <details class="feature">
+                            <summary>
+                                <i class='bx bx-check checkmark'></i>
+                                <span class="price-name">Detalle 2</span>
+                            </summary>
+                        </details>
+                        <details class="feature">
+                            <summary>
+                                <i class='bx bx-check checkmark'></i>
+                                <span class="price-name">Detalle 3</span>
+                            </summary>
+                        </details>
+                        <details class="feature">
+                            <summary>
+                                <i class='bx bx-check checkmark'></i>
+                                <span class="price-name">Detalle 4</span>
+                            </summary>
+                        </details>
+                        <button class="button-primary button-width">
+                            Comprar
+                        </button>
+                    </div>
+                </article>
+                <article class="price-table">
+                    <div class="price">
+                        <small>$</small>
+                        99
+                    </div>
+                    <h2 class="title-price">Producto 1</h2>
+                    <p class="description">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, nihil!
+                    </p>
+                    <div class="features">
+                        <details class="feature">
+                            <summary>
+                                <i class='bx bx-check checkmark'></i>
+                                <span class="price-name">Detalle 1</span>
+                            </summary>
+                        </details>
+                        <details class="feature">
+                            <summary>
+                                <i class='bx bx-check checkmark'></i>
+                                <span class="price-name">Detalle 2</span>
+                            </summary>
+                        </details>
+                        <details class="feature">
+                            <summary>
+                                <i class='bx bx-check checkmark'></i>
+                                <span class="price-name">Detalle 3</span>
+                            </summary>
+                        </details>
+                        <details class="feature">
+                            <summary>
+                                <i class='bx bx-check checkmark'></i>
+                                <span class="price-name">Detalle 4</span>
+                            </summary>
+                        </details>
+                        <button class="button-primary button-width">
+                            Comprar
+                        </button>
+                    </div>
+                </article>
+            </div>
         </div>
-      </div>
-      <div class="card span-1 med-span-3">
-        <h3>Registrate</h3>
-        <form action="">
-          <input class="input" type="text" name="email" placeholder="Email">
-          <input class="input" type="password" name="password" placeholder="Contraseña">
-          <select name="talla" id="talla">
-            <option value="">Seleccione</option>
-            <option value="">Talla</option>
-          </select>
-          <input type="checkbox" name="check" id="check">
-          <label for="check">Recordarme</label>
-          <input type="radio" name="c" id="c">
-          <br>
-          <button class="button-primary">Registrarme</button>
-          <button class="button-green">Suscribirse</button>
-      </div>
-    </div>
-  </div>
 
+        <div class="row">
+            <div class="col-med-4">
+                <h2>Alertas</h2>
 
-  <div class="container">
-    <div class="row">
-      <div class="row-col-12 col-med-12-col-peq-12">
-        <a href="/338-logo..png" class="button button-blue" download="">HOla Mundo</a>
-      </div>
-    </div>
-  </div>
+                <div class="toast toast-warning">
+                    <div class="toast-content">
+                        <i class='bx bx-check alert-check'></i>
+                        <div class="alert-message">
+                            <span class="text text-alert-title">Error</span>
+                            <span class="text text-alert-description">Lorem ipsum dolor sit amet</span>
+                        </div>
+                        <i class='bx bx-x toast-close'></i>
+                        <div class="alert-progress"></div>
+                    </div>
+                </div>
+                <button class="button-yellow button-alert">Alerta</button>
 
-  <div class="container">
-    <button class="button-primary">Boton</button>
-    <button class="button-secondary">Boton</button>
-    <button class="button-blue">Boton</button>
-    <button class="button-green">Boton</button>
-    <button class="button-dark">Boton</button>
-    <button class="button-red">Boton</button>
-    <button class="button-yellow">Boton</button>
-    <button class="button-outline-primary">Boton</button>
-    <button class="button-outline-secondary">Boton</button>
-    <button class="button-outline-blue">Boton</button>
-    <button class="button-outline-green">Boton</button>
-    <button class="button-outline-dark">Boton</button>
-    <button class="button-outline-red">Boton</button>
-    <button class="button-outline-yellow">Boton</button>
-  </div>
-
-  <div class="container">
-    <div class="row">
-      <div class="row-col-12 col-med-6 ">
-        <div class="card">
-          Hola
+            </div>
         </div>
-      </div>
-
+        <div id="button-up">
+            <i class='bx bx-chevron-up'></i>
+        </div>
     </div>
-  </div>
-
-
-  <div class="container">
-    <h3>Alerts, Modals</h3>
-    <button type="button" class="fir-open-modal" data-open="modal1">Modal de Fire Css</button>
-
-    <div class="fir-modal" id="modal1">
-      <div class="fir-modal-dialog">
-        <header class="fir-modal-header">
-          Modal de Fire Css
-          <button class="fir-close-modal" aria-label="close modal" data-close>&times;</button>
-        </header>
-        <section class="fir-modal-content">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique velit veniam, totam necessitatibus soluta
-          iste blanditiis labore voluptates perspiciatis odit sunt magni officiis. Reprehenderit delectus, tenetur atque
-          sunt sint autem?
-          Quos iste, itaque beatae quis iure hic necessitatibus natus optio modi dolor sint consequuntur doloribus rerum
-          amet possimus dicta quas sunt, odit quam dolores praesentium voluptas ad esse. Voluptatum, quisquam?
-          Quasi velit odit consequuntur repellat id nobis. Quo, reprehenderit maiores suscipit officiis nesciunt
-          laboriosam earum iusto. Tenetur quibusdam dicta quasi quos, reprehenderit nobis quidem provident quod nostrum
-          praesentium itaque adipisci?
-          Consequatur nulla sed sapiente, corporis illo est, temporibus magni debitis alias provident accusamus officia
-          saepe. Quod magnam placeat nostrum odio. Nam quaerat voluptatibus doloremque ducimus repellat dolores aliquam
-          asperiores ratione.
-          Vel iste dolor, cum quas earum doloribus, quaerat est unde incidunt id dignissimos ipsam adipisci minima rerum
-          delectus quisquam! Reprehenderit exercitationem odit magni beatae necessitatibus explicabo facilis, ut soluta
-          vel!
-          Harum aliquid quia cumque deserunt consequatur repellendus nulla quibusdam et accusamus, sed vel provident at
-          distinctio qui aperiam atque, sit rem mollitia numquam voluptates autem nisi? Dolores doloremque porro iste?
-          Non, vitae nobis! Vel doloribus veniam amet consectetur blanditiis veritatis, praesentium obcaecati molestiae
-          quae sunt facilis error, animi repellat cupiditate earum officia aspernatur eveniet culpa optio ut quos
-          quibusdam inventore.
-          Earum dicta deleniti veritatis hic voluptate atque corrupti eaque voluptates enim mollitia, possimus sunt
-          inventore iure. Dolor quidem officia optio est, dicta neque minus tempore quos incidunt libero, sit officiis.
-          Soluta cumque nulla quo provident voluptas et dolor praesentium officia, ut aliquid quasi quia distinctio
-          optio, placeat tempore maxime voluptatibus voluptatum delectus odit expedita facilis. Labore inventore tenetur
-          saepe voluptate.
-          Magni aspernatur labore illum eveniet assumenda cumque voluptatem ea necessitatibus iure sapiente dolor,
-          repellat nulla vitae velit et deserunt quae corrupti veniam praesentium dolorem inventore sed! Incidunt vel
-          rerum obcaecati?
-          Iure, veritatis labore. Officiis, quasi necessitatibus? Sequi soluta cum quibusdam quas, tempore eligendi
-          alias, voluptas repellendus minima placeat commodi odio mollitia voluptatem. Labore eius voluptatem ipsa
-          dolore? Quidem, sunt quae?
-          Voluptatem cumque consequuntur, recusandae aliquid facere, molestias, dignissimos illum culpa ipsum
-          necessitatibus distinctio eligendi sint quam cum. Ut explicabo animi, placeat possimus reprehenderit expedita
-          dignissimos, consequatur earum nesciunt nobis laborum.
-          Dicta aut cumque repudiandae incidunt provident impedit ipsa nemo eligendi molestiae, perferendis dolor,
-          temporibus sit nihil voluptatem animi fuga tempore, eos id voluptate deleniti modi. Animi est voluptates quos
-          ea?
-          Delectus, fugit repellendus eos est distinctio autem similique sint modi eum soluta? Quae nostrum quia,
-          reprehenderit assumenda consequatur quaerat explicabo ab fugiat cupiditate voluptate nihil commodi hic ipsa
-          quod inventore.
-          Quaerat asperiores aliquam quidem, voluptatem recusandae provident ducimus, fugit alias quae dolorem eum,
-          soluta velit et! Quam aliquam dolores neque ex, atque autem, tempora totam est expedita perspiciatis, rem
-          officiis?
-          Quos consequuntur ut quod sunt consequatur repellendus unde enim commodi corporis dolorum assumenda possimus
-          debitis quae at, quasi repellat illo dolorem id sint, maxime reiciendis! Qui at dolorum quibusdam maiores!
-          Saepe quas beatae eius dicta dolorem iste voluptatem aspernatur dignissimos aliquid doloribus vero delectus
-          rerum nesciunt, fuga laborum in recusandae eos, neque nemo harum fugit reiciendis nihil distinctio. Mollitia,
-          illum!
-          Tenetur quia quidem perspiciatis impedit odit totam porro, assumenda natus, mollitia nulla, pariatur aperiam
-          voluptate quis? Natus veritatis quis blanditiis doloribus qui molestiae dolorem eligendi quaerat perspiciatis?
-          Voluptas, praesentium enim.
-          Magnam eum provident, cum quidem animi recusandae, aliquid, facilis non iste et laborum sed. Esse quas unde
-          veritatis, distinctio voluptate qui pariatur hic maiores nesciunt, quibusdam ab architecto, velit quasi.
-          Provident odit modi adipisci, ullam, nisi ipsam qui non eum exercitationem assumenda earum consequatur
-          blanditiis nulla, ratione soluta temporibus cum! Quas praesentium repellendus expedita quasi, ipsum nulla
-          similique odit maxime.
-          Possimus cum exercitationem ab impedit deserunt nulla, perspiciatis reprehenderit reiciendis asperiores minus
-          fuga, optio sequi officiis ex praesentium, alias consequatur iure. Animi aliquid alias sequi quia in
-          dignissimos, error veniam.
-          Excepturi illo nobis harum perspiciatis non reprehenderit nam deserunt sapiente nostrum doloremque quae dolor
-          facilis eius laudantium nemo ipsum recusandae pariatur impedit quia minus, repudiandae soluta consequatur. Ex,
-          reprehenderit earum?
-          Eum quis ducimus, est repellat vitae harum ipsa laboriosam quaerat pariatur tenetur nam maiores, sint a
-          distinctio fugiat necessitatibus. Tempore velit saepe accusantium consectetur voluptatum consequuntur delectus
-          numquam ducimus ab!
-          Quasi, esse. Laudantium porro nam repudiandae excepturi nulla a autem, beatae tempore modi suscipit qui
-          maiores blanditiis quisquam dolores rem reiciendis, in omnis amet. Illo quibusdam iste sint doloribus natus?
-          Maxime placeat est hic. Laborum modi quia adipisci voluptatem qui voluptatum, dolore sunt aut, eaque
-          cupiditate sed nihil velit asperiores dolorum. Animi soluta sit impedit, suscipit adipisci ipsa magnam quod.
-        </section>
-        <footer class="fir-modal-footer">Hecho en Fire Css</footer>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="container">
-    <hr>
-    <table class="table">
-      <tr>
-        <th scope="row">
-          Día
-        </th>
-        <th>Lunes</th>
-        <th>Martes</th>
-        <th>Miercoles</th>
-      </tr>
-    </table>
-
-    <h2>Paginación</h2>
-    <div class="center">
-      <div class="pagination">
-        <a href="#">&laquo;</a>
-        <a href="#">1</a>
-        <a href="#">2</a>
-        <a href="#">3</a>
-        <a href="#">&raquo;</a>
-      </div>
-    </div>
-
-
-  </div>
-
-  <div class="container">
-    <article class="blog">
-      <img src="" alt="" class="blog_img">
-      <a href="" class="blog_title">Blog</a>
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe, maiores laboriosam natus quaerat ipsam iusto
-        ipsa quae cum eligendi. Laudantium eum aspernatur quisquam harum magni minima natus at. Rem, consequatur.</p>
-      <br>
-      <a href="" class="button_blog">Leer</a>
-    </article>
-  </div>
-  </div>
-
-  <div class="container">
-    <div class="grid-container">
-      <div class="grid-item1">1</div>
-      <div class="grid-item2">2</div>
-      <div class="grid-item3">3</div>
-      <div class="grid-item4">4</div>
-      <div class="grid-item5">5</div>
-      <div class="grid-item6">6</div>
-    </div>
-  </div>
-
-  <div id="button-up">
-    <span class="fas fa-chevron-up"></span>
-  </div>
-
-
-  <footer class="footer-light">
-    <div class="container">
-      <p>Realizado por NICPRO SERVICE</p>
-      <small>&copy; 2022</small>
-    </div>
-  </footer>
-
-  <script type="text/javascript" src="/js/fire.js"></script>
+    <script src="js/fire.js"></script>
 </body>
 
 </html>
